@@ -1,158 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trails & Tales - A Travel Blog</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <!-- MarkerCluster CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans:wght@400;600&display=swap">
-    <link rel="stylesheet" href="css/style.css">
+    <title>First Post - Trails & Tales</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans:wght@400;600&display=swap">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/post-style.css">
 </head>
-
 <body>
     <header>
-        <div class="container" style="display: flex; align-items: center; ">
-            <div style="flex: 12; padding-right: 0px; text-align: center;">
-                <h1 style="margin: 0; line-height: 1;">Trails & Tales</h1>
+        <div class="container" style="text-align: center;">
+            <div style="margin-bottom: 1em;"></div>
+                <img src="../assets/images/BlogLogo.png" alt="Trails & Tales Logo"
+                    style="height: auto; max-height: 6em; width: auto; border-radius: 90px;">
             </div>
-            <div style="text-align: right;">
-                <img src="assets/images/BlogLogo.png" alt="Trails & Tales Logo"
-                    style="height: 100%; max-height: 6em; width: auto; border-radius: 90px;">
+            <div style="margin-bottom: 1em;"></div>
+                <h1 style="margin: 0; line-height: 1;">Houw Hoek Trail</h1>
+            </div>
+            <div>
+                <a href="../index.html" class="back-link">← Back to all stories</a>
             </div>
         </div>
     </header>
-
+    
     <main class="container">
-        <section class="intro">
-            <div class="intro-content" style="display: flex; padding-top: 5px; ">
-                <p>This is a travel blog about exploring South Africa — its places, its stories, and its people. It’s
-                    about sharing real experiences, adventures, and a bit of local history along the way. <br><br>
-
-                    The goal is simple: to show that travel doesn’t need to be perfect, expensive, or out of reach. It’s
-                    about the kind of adventures anyone can have — road trips in an old bakkie, weekends away on a
-                    budget, and discovering the beauty of South Africa without all the fancy gear.</p>
+        <article>
+            <!-- <div class="post-header">
+                <h2>UPDATED Post</h2>
+                <div class="post-meta">April 3, 2025 • Cape Town, South Africa</div>
             </div>
-        </section>
+            
+            <div class="post-content" >
+                <p>Exploring the beautiful Cape Town and its surroundings has been an adventure of a lifetime. The city sits dramatically between the flat-topped Table Mountain and the sparkling waters of Table Bay.</p>
+                
+            </div> -->
 
-        <section class="map-container">
-            <div id="map"></div>
-            <div class="map-controls">
-                <button id="view-all">View All Locations</button>
+            <div class="post-header">
+                <h2>What a surprise!</h2>
+                <div class="post-meta">April 2, 2025 • Cape Town, South Africa</div>
             </div>
-        </section>
+            
+            <div class="post-content">
+                <p>Exploring the beautiful Cape Town and its surroundings has been an adventure of a lifetime. The city sits dramatically between the flat-topped Table Mountain and the sparkling waters of Table Bay.</p>
+                
+                <p>Early morning hikes up Lion's Head offer panoramic views that stretch across the city to the rugged Cape Peninsula. The ocean stretches endlessly toward the horizon, a deep blue canvas that changes with the weather and time of day.</p>
+                
+                <img src="../assets/images/BlogLogo.png" alt="Cape Town view from Table Mountain" class="post-image">
+                
+                <p>The local cuisine is a delightful fusion of Dutch, Malaysian, and indigenous influences. Fresh seafood, bobotie (a spiced mince dish), and malva pudding (a sweet dessert) are must-try specialties that tell the story of this region's complex cultural history.</p>
+                
+                <p>Venturing beyond the city, the Cape Winelands offer serene landscapes of rolling vineyards against mountain backdrops. Historic wine estates welcome visitors with world-class tastings amid Cape Dutch architecture that dates back centuries.</p>
+                
+                <p>This journey has only just begun, with many more corners of this diverse region to explore in the coming days.</p>
+                
+                <a href="../index.html" class="back-link">← Back to all stories</a>
+            </div>
 
-        <section class="recent-posts">
-            <h2>Recent Stories</h2>
-            <div class="posts-grid" id="posts-list">
-                <!-- Posts will be dynamically inserted here -->
-            </div>
-        </section>
+            
+        </article>
     </main>
 
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="social-links" style="display: flex; align-items: center;">
-                    <a href="https://instagram.com/trailsandtalesza" target="_blank" aria-label="trailsandtalesza"
-                        style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                        <img src="assets/images/instagram-brands.svg" alt="Instagram" width="24" height="24"
-                            style="margin-right: 8px;">
-                        <span> | trailsandtalesza</span>
-                    </a>
-                </div>
-                <p>&copy; 2025 Trails & Tales Blog. All rights reserved.</p>
-
-            </div>
+            <p>&copy; 2025 Journeys Blog. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <!-- MarkerCluster JS -->
-    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+    <!-- Scroll to top button -->
+    <button id="scrollToTopBtn" title="Go to top">↑</button>
+
+    <style>
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            width: 50px;
+            height: 50px;
+            transition: background-color 0.3s;
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+
     <script>
-        var map = L.map('map').setView([-33, 20], 7);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap contributors'
-        }).addTo(map);
+        // Get the button
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-        var locations = [
-            { "title": "First Post", "lat": -33.9249, "lng": 18.3241, "url": "posts/first-post.html", "excerpt": "Exploring the beautiful Cape Town and its surroundings...", "date": "April 2, 2025" },
-            { "title": "Second Post", "lat": -33.8041, "lng": 18.0473, "url": "posts/second-post.html", "excerpt": "Johannesburg's urban landscape offers unique perspectives...", "date": "March 25, 2025" }
-        ];
-
-        // Custom icon for markers
-        var postIcon = L.icon({
-            iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
-            shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
-            iconSize: [25, 41],
-            iconAnchor: [12, 41],
-            popupAnchor: [1, -34]
-        });
-
-        // Create a marker cluster group
-        var markers = L.markerClusterGroup({
-            showCoverageOnHover: false,
-            maxClusterRadius: 50,
-            spiderfyOnMaxZoom: true
-        });
-
-        // Add markers to cluster group instead of directly to map
-        locations.forEach(loc => {
-            var marker = L.marker([loc.lat, loc.lng], { icon: postIcon })
-                .bindPopup(`<div class="popup-content">
-                    <h3>${loc.title}</h3>
-                    <p>${loc.excerpt}</p>
-                    <a href="${loc.url}" class="read-more">Read more</a>
-                </div>`);
-            markers.addLayer(marker);
-        });
-
-        // Add the cluster group to the map
-        map.addLayer(markers);
-
-        // Create post cards - MODIFIED FOR RECENCY
-        const postsContainer = document.getElementById('posts-list');
-
-        // Sort locations by date (newest first)
-        const sortedLocations = [...locations].sort((a, b) => {
-            const dateA = new Date(a.date);
-            const dateB = new Date(b.date);
-            return dateB - dateA; // Sort descending (newest first)
-        });
-
-        // Limit to the most recent posts (e.g., 3)
-        const recentPosts = sortedLocations.slice(0, 3);
-
-        // Display only the recent posts
-        recentPosts.forEach(post => {
-            const postCard = document.createElement('div');
-            postCard.className = 'post-card';
-            postCard.innerHTML = `
-                <h3>${post.title}</h3>
-                <div class="post-meta">${post.date}</div>
-                <p>${post.excerpt}</p>
-                <a href="${post.url}" class="read-more">Read more</a>
-            `;
-            postsContainer.appendChild(postCard);
-        });
-
-        // View all button functionality
-        document.getElementById('view-all').addEventListener('click', function () {
-            var bounds = [];
-            locations.forEach(loc => {
-                bounds.push([loc.lat, loc.lng]);
-            });
-            if (bounds.length > 0) {
-                var mapBounds = L.latLngBounds(bounds);
-                map.fitBounds(mapBounds.pad(0.06));
+        // When the user scrolls down 300px from the top, show the button
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
             }
+        };
+
+        // When the user clicks on the button, scroll to the top of the document
+        scrollToTopBtn.addEventListener("click", function() {
+            // For Safari
+            document.body.scrollTop = 0;
+            // For Chrome, Firefox, IE and Opera
+            document.documentElement.scrollTop = 0;
         });
     </script>
 </body>
-
 </html>
